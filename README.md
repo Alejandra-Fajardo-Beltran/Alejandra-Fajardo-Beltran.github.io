@@ -1,0 +1,9 @@
+# Alejandra Fajardo Beltrán — Personal Site
+
+One-page bilingual (ES/EN) resume site.
+
+- `index.html` — the site. Language copy lives in the `COPY` object in the inline script at the bottom.
+- `support.js` — small render runtime the page depends on.
+- `AlejandraFajardoBeltran-Resume-EN.pdf` / `-ES.pdf` — printable resumes linked from the "Printable resume" / "Hoja de vida" buttons.
+
+Served by GitHub Pages from `main`.

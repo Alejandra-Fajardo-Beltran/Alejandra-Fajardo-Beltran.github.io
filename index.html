@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFDFC}
+a{color:#96595C;text-decoration:none}
+a:hover{color:#6E3C40}
+@keyframes afb-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes afb-riseIn{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+@keyframes afb-fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes afb-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes afb-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes afb-spinBack{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes afb-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes afb-drift{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0deg)}8%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translate3d(9vw,108vh,0) rotate(420deg)}}
+@keyframes afb-driftB{0%{opacity:0;transform:translate3d(0,-10vh,0) rotate(0deg)}10%{opacity:1}90%{opacity:1}100%{opacity:0;transform:translate3d(-7vw,110vh,0) rotate(-380deg)}}
+</style>
+</helmet>
+
+<div style="position:relative;min-width:0;background:#FFFDFC;font-family:'Source Sans 3',system-ui,sans-serif;color:#2B2320;overflow-x:clip">
+
+<sc-if value="{{ showPetals }}" hint-placeholder-val="{{ true }}">
+<div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden">
+<div style="position:absolute;left:8%;top:0;width:13px;height:19px;border-radius:50%;background:#E4C9C4;opacity:.5;animation:afb-drift 26s linear infinite;animation-delay:-2s"></div>
+<div style="position:absolute;left:27%;top:0;width:9px;height:14px;border-radius:50%;background:#EDD9D4;opacity:.55;animation:afb-driftB 34s linear infinite;animation-delay:-11s"></div>
+<div style="position:absolute;left:49%;top:0;width:11px;height:16px;border-radius:50%;background:#E4C9C4;opacity:.4;animation:afb-drift 41s linear infinite;animation-delay:-24s"></div>
+<div style="position:absolute;left:68%;top:0;width:8px;height:12px;border-radius:50%;background:#E9CFC9;opacity:.5;animation:afb-driftB 29s linear infinite;animation-delay:-6s"></div>
+<div style="position:absolute;left:83%;top:0;width:14px;height:20px;border-radius:50%;background:#EDD9D4;opacity:.45;animation:afb-drift 37s linear infinite;animation-delay:-17s"></div>
+<div style="position:absolute;left:94%;top:0;width:10px;height:15px;border-radius:50%;background:#E4C9C4;opacity:.4;animation:afb-driftB 45s linear infinite;animation-delay:-31s"></div>
+</div>
+</sc-if>
+
+<nav style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px clamp(18px,4vw,58px);background:rgba(255,253,252,0.86);backdrop-filter:blur(10px);border-bottom:1px solid #F0E2DD">
+<a href="#top" style="display:flex;align-items:center;gap:11px;color:#2B2320">
+<span style="width:34px;height:34px;border-radius:50%;background:#F7EFEC;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;font-weight:600;letter-spacing:.06em;color:#96595C">AFB</span>
+<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6E615C">Alejandra Fajardo</span>
+</a>
+<div style="display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);flex-wrap:wrap">
+<a href="#work" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6E615C" style-hover="color:#96595C">{{ nav1 }}</a>
+<a href="#education" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6E615C" style-hover="color:#96595C">{{ nav2 }}</a>
+<a href="#skills" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6E615C" style-hover="color:#96595C">{{ nav3 }}</a>
+<a href="#contact" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6E615C" style-hover="color:#96595C">{{ nav4 }}</a>
+<div style="position:relative;display:flex;align-items:center;padding:3px;border:1px solid #E6D6D1;border-radius:999px;background:#FFFDFC">
+<div style="position:absolute;top:3px;left:3px;width:44px;height:26px;border-radius:999px;background:#F1E3DE;transition:transform .45s cubic-bezier(.22,.8,.2,1);transform:translateX({{ langX }})"></div>
+<button type="button" onClick="{{ setEn }}" style="position:relative;width:44px;height:26px;border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:11.5px;font-weight:600;letter-spacing:.1em;color:#4A403C">EN</button>
+<button type="button" onClick="{{ setEs }}" style="position:relative;width:44px;height:26px;border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:11.5px;font-weight:600;letter-spacing:.1em;color:#4A403C">ES</button>
+</div>
+</div>
+</nav>
+
+<header id="top" style="position:relative;padding:clamp(46px,8vw,104px) clamp(20px,5vw,72px) clamp(34px,5vw,64px);background:linear-gradient(180deg,#F9F2EF 0%,#FFFDFC 100%);overflow:hidden">
+<div aria-hidden="true" style="position:absolute;right:-90px;top:-70px;width:120px;height:120px;transform:scale(3.1);transform-origin:center;opacity:.5;animation:afb-spin 120s linear infinite">
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(0deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(60deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(120deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(180deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(240deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#EFDCD7;transform:rotate(300deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:#F7EFEC"></div>
+</div>
+
+<div style="position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(26px,4vw,56px);align-items:center">
+<div style="min-width:0">
+<p style="margin:0;opacity:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#96595C;animation:afb-fadeIn .9s .1s ease-out both">{{ heroEyebrow }}</p>
+<h1 style="margin:10px 0 0;opacity:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(46px,8.4vw,104px);line-height:0.95;letter-spacing:-.012em;color:#2B2320;text-wrap:balance;animation:afb-riseIn 1.1s .18s cubic-bezier(.2,.75,.2,1) both">Alejandra<br><em style="font-weight:300;color:#96595C">Fajardo</em> Beltrán</h1>
+<div style="margin:22px 0 0;height:1px;background:#DCC7C2;transform-origin:left;animation:afb-grow 1.1s .5s cubic-bezier(.2,.8,.2,1) both"></div>
+<p style="margin:20px 0 0;opacity:0;font-size:clamp(15px,1.5vw,18px);line-height:1.55;color:#4A403C;max-width:52ch;text-wrap:pretty;animation:afb-rise 1s .62s cubic-bezier(.2,.75,.2,1) both">{{ heroLede }}</p>
+</div>
+
+<sc-if value="{{ showPortrait }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;justify-self:center;width:min(78vw,382px);aspect-ratio:1;margin:clamp(22px,6vw,34px) 0;opacity:0;animation:afb-fadeIn 1.4s .3s ease-out both">
+<div aria-hidden="true" style="position:absolute;inset:-6%;border-radius:50%;border:1px dashed #D9C0BB;animation:afb-spin 90s linear infinite"></div>
+<div aria-hidden="true" style="position:absolute;inset:3%;border-radius:50%;border:1px solid #EADCD8;animation:afb-breathe 9s ease-in-out infinite"></div>
+<div aria-hidden="true" style="position:absolute;left:-26px;bottom:2%;width:120px;height:120px;transform:scale(.78);opacity:.95;animation:afb-spinBack 64s linear infinite">
+<div style="position:absolute;left:50%;top:50%;width:34px;height:66px;margin:-33px 0 0 -17px;border-radius:50%;background:#E7CFC9;transform:rotate(0deg) translateY(-26px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:34px;height:66px;margin:-33px 0 0 -17px;border-radius:50%;background:#E7CFC9;transform:rotate(72deg) translateY(-26px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:34px;height:66px;margin:-33px 0 0 -17px;border-radius:50%;background:#E7CFC9;transform:rotate(144deg) translateY(-26px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:34px;height:66px;margin:-33px 0 0 -17px;border-radius:50%;background:#E7CFC9;transform:rotate(216deg) translateY(-26px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:34px;height:66px;margin:-33px 0 0 -17px;border-radius:50%;background:#E7CFC9;transform:rotate(288deg) translateY(-26px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#C79A94"></div>
+</div>
+<div style="position:absolute;inset:8%;border-radius:50%;overflow:hidden;background:#F7EFEC;box-shadow:0 18px 44px rgba(150,89,92,.16)">
+<img src="./portrait-square.jpg" alt="Alejandra Fajardo Beltrán" style="width:100%;height:100%;object-fit:cover;display:block">
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="margin-top:clamp(28px,4vw,46px);max-width:1120px;margin-left:auto;margin-right:auto;position:relative;display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:afb-rise 1s .8s cubic-bezier(.2,.75,.2,1) both;flex-direction:{{ ctaDir }};align-items:{{ ctaAlign }}">
+<a href="mailto:alejandrafajardobeltran@hotmail.com" style="padding:13px 24px;border-radius:999px;background:#96595C;color:#FFFDFC;font-size:13px;letter-spacing:.09em;text-transform:uppercase;text-align:center;transition:transform .3s ease,background .3s ease" style-hover="background:#7C474A;color:#FFFDFC;transform:translateY(-2px)">{{ ctaMail }}</a>
+<a href="{{ resumeHref }}" target="_blank" rel="noopener" style="padding:13px 24px;border-radius:999px;border:1px solid #DCC7C2;color:#4A403C;font-size:13px;letter-spacing:.09em;text-transform:uppercase;text-align:center;transition:transform .3s ease,border-color .3s ease" style-hover="border-color:#96595C;color:#96595C;transform:translateY(-2px)">{{ ctaResume }}</a>
+<a href="https://linkedin.com/in/alefb" target="_blank" rel="noopener" style="padding:13px 24px;border-radius:999px;border:1px solid #DCC7C2;color:#4A403C;font-size:13px;letter-spacing:.09em;text-transform:uppercase;text-align:center;transition:transform .3s ease,border-color .3s ease" style-hover="border-color:#96595C;color:#96595C;transform:translateY(-2px)">LinkedIn</a>
+</div>
+</header>
+
+<section style="padding:clamp(28px,4vw,46px) clamp(20px,5vw,72px);background:#F7EFEC;border-top:1px solid #F0E2DD;border-bottom:1px solid #F0E2DD">
+<div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(18px,3vw,34px)">
+<sc-for list="{{ stats }}" as="stat" hint-placeholder-count="4">
+<div style="min-width:0;animation:afb-rise .9s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 26%">
+<div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(38px,4.4vw,56px);line-height:1;color:#96595C;font-variant-numeric:tabular-nums">{{ stat.display }}</div>
+<div style="margin-top:9px;padding-top:9px;border-top:1px solid #E1CEC9;font-size:12.5px;line-height:1.4;letter-spacing:.06em;color:#5B504B;text-wrap:pretty">{{ stat.label }}</div>
+</sc-for>
+</div>
+</section>
+
+<section style="padding:clamp(46px,7vw,92px) clamp(20px,5vw,72px)">
+<div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(22px,4vw,54px);align-items:start">
+<h2 style="margin:0;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#96595C;animation:afb-fadeIn .8s both;animation-timeline:view();animation-range:entry 0% cover 22%">{{ summaryLabel }}</h2>
+<p style="margin:0;grid-column:span 2;min-width:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,2.3vw,30px);font-weight:300;line-height:1.42;color:#3D3430;text-wrap:pretty;animation:afb-rise 1s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 28%">{{ summary }}</p>
+</div>
+</section>
+
+<section id="work" style="padding:clamp(34px,5vw,70px) clamp(20px,5vw,72px);background:linear-gradient(180deg,#FFFDFC 0%,#FBF6F4 100%)">
+<div style="max-width:1120px;margin:0 auto">
+<div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:clamp(26px,3vw,44px)">
+<h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.4vw,58px);font-weight:400;line-height:1;color:#2B2320">{{ workTitle }}</h2>
+<span style="flex:1 1 90px;height:1px;background:#E6D6D1;transform-origin:left;animation:afb-grow 1.2s cubic-bezier(.2,.8,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 25%"></span>
+</div>
+<div style="display:flex;flex-direction:column;gap:clamp(20px,2.6vw,34px)">
+<sc-for list="{{ jobs }}" as="job" hint-placeholder-count="4">
+<article style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(12px,2.4vw,40px);padding:clamp(20px,2.6vw,34px);border:1px solid #F0E2DD;border-radius:3px;background:#FFFDFC;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .45s ease;animation:afb-rise 1s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 24%" style-hover="transform:translateY(-4px);box-shadow:0 16px 40px rgba(150,89,92,.1);border-color:#E1CEC9">
+<div style="min-width:0">
+<p style="margin:0;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#96595C">{{ job.dates }}</p>
+<h3 style="margin:9px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(23px,2.3vw,30px);font-weight:500;line-height:1.14;color:#2B2320;text-wrap:balance">{{ job.role }}</h3>
+<p style="margin:7px 0 0;font-size:13.5px;font-style:italic;color:#6E615C">{{ job.org }}</p>
+</div>
+<ul style="margin:0;padding:0;grid-column:span 2;min-width:0;list-style:none;display:flex;flex-direction:column;gap:11px">
+<sc-for list="{{ job.points }}" as="pt" hint-placeholder-count="3">
+<li style="position:relative;padding-left:20px;font-size:14.5px;line-height:1.62;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#C79A94">{{ pt }}</li>
+</sc-for>
+</ul>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="education" style="padding:clamp(46px,7vw,92px) clamp(20px,5vw,72px);background:#FBF6F4;border-top:1px solid #F0E2DD">
+<div style="max-width:1120px;margin:0 auto">
+<div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)">
+<h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.4vw,58px);font-weight:400;line-height:1;color:#2B2320">{{ eduTitle }}</h2>
+<span style="flex:1 1 90px;height:1px;background:#E6D6D1;transform-origin:left;animation:afb-grow 1.2s cubic-bezier(.2,.8,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 25%"></span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr));gap:clamp(18px,2.4vw,30px)">
+<sc-for list="{{ education }}" as="ed" hint-placeholder-count="3">
+<article style="min-width:0;padding:clamp(20px,2.4vw,28px);border-top:2px solid #96595C;background:#FFFDFC;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;animation:afb-rise 1s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 26%" style-hover="transform:translateY(-4px);box-shadow:0 14px 36px rgba(150,89,92,.1)">
+<p style="margin:0;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#96595C">{{ ed.dates }}</p>
+<h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,2vw,25px);font-weight:500;line-height:1.2;color:#2B2320;text-wrap:balance">{{ ed.degree }}</h3>
+<p style="margin:6px 0 12px;font-size:13.5px;font-style:italic;color:#6E615C">{{ ed.org }}</p>
+<p style="margin:0;font-size:14px;line-height:1.6;color:#3D3430;text-wrap:pretty">{{ ed.note }}</p>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="skills" style="padding:clamp(46px,7vw,92px) clamp(20px,5vw,72px);background:#F7EFEC;border-top:1px solid #F0E2DD">
+<div style="max-width:1120px;margin:0 auto">
+<div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)">
+<h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.4vw,58px);font-weight:400;line-height:1;color:#2B2320">{{ skillsTitle }}</h2>
+<span style="flex:1 1 90px;height:1px;background:#E1CEC9;transform-origin:left;animation:afb-grow 1.2s cubic-bezier(.2,.8,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 25%"></span>
+</div>
+<div style="display:flex;flex-direction:column;gap:clamp(14px,2vw,22px)">
+<sc-for list="{{ skills }}" as="sk" hint-placeholder-count="3">
+<div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(8px,2vw,34px);padding-bottom:clamp(14px,2vw,22px);border-bottom:1px solid #E1CEC9;animation:afb-rise .95s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 24%">
+<h3 style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#96595C;text-wrap:balance">{{ sk.label }}</h3>
+<p style="margin:0;grid-column:span 2;min-width:0;font-size:15px;line-height:1.62;color:#3D3430;text-wrap:pretty">{{ sk.text }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding:clamp(46px,7vw,92px) clamp(20px,5vw,72px)">
+<div style="max-width:1120px;margin:0 auto">
+<h2 style="margin:0 0 clamp(22px,3vw,36px);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#96595C;animation:afb-fadeIn .8s both;animation-timeline:view();animation-range:entry 0% cover 22%">{{ leadTitle }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(18px,3vw,38px)">
+<sc-for list="{{ leadership }}" as="ld" hint-placeholder-count="2">
+<article style="min-width:0;position:relative;padding-left:22px;animation:afb-rise 1s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 26%" style-before="content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:#E4C9C4">
+<p style="margin:0;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#96595C">{{ ld.dates }}</p>
+<h3 style="margin:9px 0 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2vw,25px);font-weight:500;line-height:1.2;color:#2B2320;text-wrap:balance">{{ ld.title }}</h3>
+<p style="margin:0;font-size:14.5px;line-height:1.62;color:#3D3430;text-wrap:pretty">{{ ld.text }}</p>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer id="contact" style="position:relative;padding:clamp(52px,8vw,110px) clamp(20px,5vw,72px) clamp(30px,4vw,48px);background:#96595C;color:#FBF1EE;overflow:hidden">
+<div aria-hidden="true" style="position:absolute;left:-70px;bottom:-80px;width:120px;height:120px;transform:scale(2.6);opacity:.16;animation:afb-spin 140s linear infinite">
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#FFFDFC;transform:rotate(0deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#FFFDFC;transform:rotate(72deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#FFFDFC;transform:rotate(144deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#FFFDFC;transform:rotate(216deg) translateY(-28px)"></div>
+<div style="position:absolute;left:50%;top:50%;width:36px;height:70px;margin:-35px 0 0 -18px;border-radius:50%;background:#FFFDFC;transform:rotate(288deg) translateY(-28px)"></div>
+</div>
+<div style="position:relative;max-width:1120px;margin:0 auto">
+<p style="margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#E9CFC9;animation:afb-fadeIn .9s both;animation-timeline:view();animation-range:entry 0% cover 24%">{{ contactLabel }}</p>
+<h2 style="margin:16px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,5vw,68px);font-weight:400;line-height:1.05;letter-spacing:-.01em;color:#FFFDFC;text-wrap:balance;animation:afb-rise 1.1s cubic-bezier(.2,.75,.2,1) both;animation-timeline:view();animation-range:entry 0% cover 30%">{{ contactTitle }}</h2>
+<div style="margin-top:clamp(26px,4vw,44px);display:flex;flex-wrap:wrap;gap:clamp(18px,4vw,64px)">
+<div>
+<p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#DFBDB7">Email</p>
+<a href="mailto:alejandrafajardobeltran@hotmail.com" style="font-size:clamp(14px,1.5vw,17px);color:#FFFDFC;border-bottom:1px solid rgba(255,253,252,.4)" style-hover="color:#FFFDFC;border-color:#FFFDFC">alejandrafajardobeltran@hotmail.com</a>
+</div>
+<div>
+<p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#DFBDB7">LinkedIn</p>
+<a href="https://linkedin.com/in/alefb" target="_blank" rel="noopener" style="font-size:clamp(14px,1.5vw,17px);color:#FFFDFC;border-bottom:1px solid rgba(255,253,252,.4)" style-hover="color:#FFFDFC;border-color:#FFFDFC">linkedin.com/in/alefb</a>
+</div>
+<div>
+<p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#DFBDB7">{{ ventureLabel }}</p>
+<a href="https://kattyco.ca" target="_blank" rel="noopener" style="font-size:clamp(14px,1.5vw,17px);color:#FFFDFC;border-bottom:1px solid rgba(255,253,252,.4)" style-hover="color:#FFFDFC;border-color:#FFFDFC">kattyco.ca</a>
+</div>
+<div>
+<p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#DFBDB7">{{ basedLabel }}</p>
+<p style="margin:0;font-size:clamp(14px,1.5vw,17px);color:#FFFDFC">{{ basedValue }}</p>
+</div>
+</div>
+<div style="margin-top:clamp(34px,5vw,60px);padding-top:18px;border-top:1px solid rgba(255,253,252,.22);display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E9CFC9">
+<span>Alejandra Fajardo Beltrán</span>
+<a href="{{ resumeHref }}" target="_blank" rel="noopener" style="color:#E9CFC9" style-hover="color:#FFFDFC">{{ ctaResume }}</a>
+</div>
+</div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Español&quot;,&quot;options&quot;:[&quot;Español&quot;,&quot;English&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;showPortrait&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showPetals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const COPY = {
+  en: {
+    nav: ['Experience', 'Education', 'Skills', 'Contact'],
+    heroEyebrow: 'Operations · Sales · Business Automation',
+    heroLede: 'Business Administrator and entrepreneur — nine years founding, running and automating business operations across Colombia and Canada.',
+    ctaMail: 'Get in touch',
+    ctaResume: 'Printable resume',
+    resumeHref: 'AlejandraFajardoBeltran-Resume-EN.pdf',
+    summaryLabel: 'Professional summary',
+    summary: "Founder of Katty & Co. ($30K ARR), where I designed the complete digital architecture: a proprietary website, a Notion CRM and AI automations across the client lifecycle. Experience coordinating logistics and teams of up to 10 people under pressure. Recognized for academic excellence (Dean's List) and selected institutionally, among hundreds of applicants, for the International Program in Ghana.",
+    workTitle: 'Experience',
+    eduTitle: 'Education',
+    skillsTitle: 'Skills',
+    leadTitle: 'Leadership & volunteering',
+    contactLabel: 'Open to opportunities',
+    contactTitle: "Let's talk about operations, sales and systems that run themselves.",
+    ventureLabel: 'Venture',
+    basedLabel: 'Based in',
+    basedValue: 'Vancouver, BC / Bogotá, CO',
+    stats: [
+      { value: 30, prefix: '$', suffix: 'K', label: 'Annual revenue built at Katty & Co.' },
+      { value: 9, prefix: '', suffix: '', label: 'Years founding and running businesses' },
+      { value: 15, prefix: '', suffix: '+', label: 'Bookings generated per month' },
+      { value: 3, prefix: '', suffix: '', label: 'Languages: Spanish, English, French' }
+    ],
+    jobs: [
+      {
+        role: 'Founder & Operator', org: 'Katty & Co. · Vancouver, BC', dates: '2023 — Present',
+        points: [
+          'Grew a pet care business to $30K CAD in annual revenue with no outside capital, running it profitably while completing a full-time Bachelor of Business Administration.',
+          "Designed and built the company's CRM in Notion, consolidating client records, bookings and service history into a single system that replaced manual scheduling and follow-up.",
+          'Automated the entire client lifecycle using Notion, GPT and Gmail: booking-triggered welcome emails, AI-personalized daily pet reports with photos, and post-service feedback requests, cutting recurring admin work to near zero.',
+          'Generate 15+ bookings per month through new client acquisition and a recurring client base, won through printed card distribution and referrals.',
+          'Built a 5-star profile on the Rover marketplace alongside a direct client base, diversifying acquisition so the business does not depend on a single channel.'
+        ]
+      },
+      {
+        role: 'Independent Contractor & Staffing Coordinator', org: 'Vancouver, BC', dates: '2022 — Present',
+        points: [
+          'Coordinate logistics, schedules and operational requirements directly with clients on independent contracts.',
+          'Recruit, screen and deploy staffing teams for projects and events, scaling headcount to client demand.',
+          'Negotiate rates in English, manage project budgets and resolve on-site contingencies to hold service standards in real time.'
+        ]
+      },
+      {
+        role: 'Customer Service Manager & Operations Lead', org: 'Mezcaleros Tapas & Cocktails · Montreal, QC', dates: 'May — Dec 2021',
+        points: [
+          'Promoted from bartender to operations lead in a high-volume hospitality environment.',
+          'Designed and implemented a section-based role distribution system that balanced workload and equalized tip allocation across the team.',
+          'Improved customer service response times and team cohesion during peak service volume.'
+        ]
+      },
+      {
+        role: 'Founder', org: 'Magic Bra (E-commerce) · Bogotá, Colombia', dates: '2018 — 2019',
+        points: [
+          'Ran a lingerie e-commerce brand, importing product from China to Bogotá, to self-fund my university studies.',
+          'Sourced and imported products from international suppliers, managing landed costs, inventory and margins while driving sales through social media, direct prospecting and referrals.'
+        ]
+      }
+    ],
+    education: [
+      { degree: 'Bachelor of Business Administration (BBA)', org: 'Capilano University · Vancouver, BC', dates: '2022 — 2025', note: "GPA 3.50 / 4.0. Concentrations in Strategic Marketing, Corporate Finance, Accounting and International Business. Dean's List in multiple semesters." },
+      { degree: 'Diploma in Medical Aesthetics', org: 'Blanche Macdonald Centre · Vancouver, BC', dates: '2026 — Present', note: '680-hour program in cosmetic chemistry, cell biology and clinical protocols.' },
+      { degree: 'DVS & ASP, Legal and Administrative Secretarial Studies', org: 'Collège Supérieur de Montréal · Montreal, QC', dates: '2019 — 2020', note: '1,485 hours completed entirely in French. Legal drafting, corporate records management, office procedures.' }
+    ],
+    skills: [
+      { label: 'Business & operations', text: 'Client acquisition, B2B and B2C direct sales, contract negotiation, budget management, process design, recruiting and staffing coordination, business analysis.' },
+      { label: 'Systems & automation', text: 'Notion (database and CRM design), workflow automation, generative AI (ChatGPT, Claude, Gemini), AI-assisted reporting and content, MS Office (Excel), POS systems.' },
+      { label: 'Languages', text: 'Spanish (native), English (C1/C2, IELTS and EF SET certified), French (B2, professional working proficiency).' }
+    ],
+    leadership: [
+      { title: 'International Exchange Selection · Dzodze, Ghana', dates: 'Dec 2025', text: 'Awarded a place through a competitive process for a three-week field program. Led local business projects, donation logistics and English instruction.' },
+      { title: 'Foster & Socialization Volunteer · VOKRA, Vancouver', dates: '2024 — 2025', text: 'Coordinated temporary foster placements, health reporting and socialization tracking for rescued cats.' }
+    ]
+  },
+  es: {
+    nav: ['Experiencia', 'Educación', 'Habilidades', 'Contacto'],
+    heroEyebrow: 'Operaciones · Ventas · Automatización',
+    heroLede: 'Administradora de Empresas y emprendedora — nueve años fundando, gestionando y automatizando operaciones de negocio en Colombia y Canadá.',
+    ctaMail: 'Hablemos',
+    ctaResume: 'Hoja de vida',
+    resumeHref: 'AlejandraFajardoBeltran-Resume-ES.pdf',
+    summaryLabel: 'Resumen profesional',
+    summary: 'Fundadora de Katty & Co. ($30K ARR), donde diseñé la arquitectura digital completa: plataforma web propia, CRM en Notion y automatizaciones con IA para el ciclo de vida del cliente. Experiencia coordinando logística y equipos de hasta 10 personas en entornos de alta presión. Destacada por excelencia académica (Dean\u2019s List) y seleccionada a nivel institucional, entre cientos de postulantes, para el Programa Internacional en Ghana.',
+    workTitle: 'Experiencia',
+    eduTitle: 'Educación',
+    skillsTitle: 'Habilidades',
+    leadTitle: 'Liderazgo y voluntariado',
+    contactLabel: 'Abierta a oportunidades',
+    contactTitle: 'Hablemos de operaciones, ventas y sistemas que funcionan solos.',
+    ventureLabel: 'Negocio',
+    basedLabel: 'Ubicación',
+    basedValue: 'Vancouver, BC / Bogotá, CO',
+    stats: [
+      { value: 30, prefix: '$', suffix: 'K', label: 'Ingresos anuales construidos en Katty & Co.' },
+      { value: 9, prefix: '', suffix: '', label: 'Años fundando y gestionando negocios' },
+      { value: 15, prefix: '', suffix: '+', label: 'Reservas generadas por mes' },
+      { value: 3, prefix: '', suffix: '', label: 'Idiomas: español, inglés, francés' }
+    ],
+    jobs: [
+      {
+        role: 'Fundadora y Operadora', org: 'Katty & Co. · Vancouver, BC', dates: '2023 — Presente',
+        points: [
+          'Impulsé un negocio de cuidado de mascotas hasta $30K CAD en ingresos anuales sin capital externo, operándolo de manera rentable mientras completaba una licenciatura a tiempo completo en Administración de Empresas.',
+          'Diseñé y construí el CRM de la empresa en Notion, consolidando registros de clientes, reservas e historial de servicios en un solo sistema que reemplazó la programación y el seguimiento manuales.',
+          'Automaté todo el ciclo de vida del cliente con Notion, GPT y Gmail: correos de bienvenida activados por reservas, informes diarios personalizados con IA y fotos, y solicitudes de retroalimentación posteriores al servicio, reduciendo el trabajo administrativo recurrente a casi cero.',
+          'Genero más de 15 reservas al mes mediante la adquisición de nuevos clientes y una base recurrente, obtenidos a través de la distribución de tarjetas impresas y referencias.',
+          'Desarrollé un perfil de 5 estrellas en Rover junto con una base de clientes directos, diversificando la adquisición para que el negocio no dependa de un solo canal.'
+        ]
+      },
+      {
+        role: 'Contratista Independiente y Coordinadora de Personal', org: 'Vancouver, BC', dates: '2022 — Presente',
+        points: [
+          'Coordino la logística, los horarios y los requerimientos operativos directamente con los clientes en contratos independientes.',
+          'Recluto, evalúo y despliego equipos de personal para proyectos y eventos, ajustando el número de colaboradores según la demanda del cliente.',
+          'Negocio tarifas en inglés, controlo presupuestos de proyectos y resuelvo contingencias en sitio para mantener los estándares de servicio en tiempo real.'
+        ]
+      },
+      {
+        role: 'Gerente de Atención al Cliente y Líder de Operaciones', org: 'Mezcaleros Tapas & Cocktails · Montreal, QC', dates: 'May. — Dic. 2021',
+        points: [
+          'Promovida de bartender a líder de operaciones en un entorno de hospitalidad de alto volumen.',
+          'Diseñé e implementé un sistema de distribución de roles por área de servicio que equilibró la carga de trabajo e igualó la asignación de propinas en todo el equipo.',
+          'Mejoré los tiempos de respuesta del servicio al cliente y la cohesión del equipo durante los picos de mayor volumen.'
+        ]
+      },
+      {
+        role: 'Fundadora', org: 'Magic Bra (E-commerce) · Bogotá, Colombia', dates: '2018 — 2019',
+        points: [
+          'Dirigí una marca de comercio electrónico de lencería, importando producto desde China a Bogotá, para autofinanciar mis estudios universitarios.',
+          'Busqué e importé productos de proveedores internacionales, gestionando costos de llegada, inventarios y márgenes, mientras impulsaba las ventas mediante redes sociales, prospección directa y referencias.'
+        ]
+      }
+    ],
+    education: [
+      { degree: 'Licenciatura en Administración de Empresas (BBA)', org: 'Capilano University · Vancouver, BC', dates: '2022 — 2025', note: 'Promedio 3.50 / 4.0. Especializaciones en Marketing Estratégico, Finanzas Corporativas, Contabilidad y Comercio Internacional. Lista del Decano en múltiples semestres.' },
+      { degree: 'Diploma en Estética Médica', org: 'Blanche Macdonald Centre · Vancouver, BC', dates: '2026 — Presente', note: 'Programa de 680 horas en química cosmética, biología celular y protocolos clínicos.' },
+      { degree: 'DVS y ASP, Estudios Secretariales Legales y Administrativos', org: 'Collège Supérieur de Montréal · Montreal, QC', dates: '2019 — 2020', note: '1.485 horas completadas enteramente en francés. Redacción jurídica, gestión de archivos corporativos y procedimientos de oficina.' }
+    ],
+    skills: [
+      { label: 'Negocio y operaciones', text: 'Captación de clientes, ventas directas B2B y B2C, negociación de contratos, gestión presupuestaria, diseño de procesos, reclutamiento y coordinación de personal, análisis de negocios.' },
+      { label: 'Sistemas y automatización', text: 'Notion (diseño de bases de datos y CRM), automatización de flujos de trabajo, IA generativa (ChatGPT, Claude, Gemini), informes y contenidos asistidos por IA, MS Office (Excel), sistemas POS.' },
+      { label: 'Idiomas', text: 'Español (nativo), inglés (C1/C2, certificado por IELTS y EF SET), francés (B2, competencia profesional para el trabajo).' }
+    ],
+    leadership: [
+      { title: 'Selección para Intercambio Internacional · Dzodze, Ghana', dates: 'Dic. 2025', text: 'Becada en un proceso competitivo para un programa de campo de tres semanas. Dirigí proyectos comerciales locales, la logística de donaciones y la instrucción de inglés.' },
+      { title: 'Voluntaria de Acogida y Socialización · VOKRA, Vancouver', dates: '2024 — 2025', text: 'Coordiné ubicaciones de acogida temporal, informes de salud y seguimiento de socialización para gatos rescatados.' }
+    ]
+  }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let saved = null;
+    try { saved = localStorage.getItem('afb-site-lang'); } catch (e) {}
+    this.state = { lang: saved === 'es' || saved === 'en' ? saved : (props.defaultLang === 'English' ? 'en' : 'es'), p: 0, vw: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+    this.onResize = () => this.setState({ vw: window.innerWidth });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+    const start = () => {
+      const t0 = performance.now();
+      const tick = () => {
+        const k = Math.min(1, (performance.now() - t0) / 1400);
+        this.setState({ p: 1 - Math.pow(1 - k, 3) });
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    setTimeout(start, 500);
+  }
+
+  setLang(lang) {
+    try { localStorage.setItem('afb-site-lang', lang); } catch (e) {}
+    this.setState({ lang });
+  }
+
+  renderVals() {
+    const t = COPY[this.state.lang] || COPY.en;
+    const p = this.state.p;
+    return {
+      nav1: t.nav[0], nav2: t.nav[1], nav3: t.nav[2], nav4: t.nav[3],
+      heroEyebrow: t.heroEyebrow,
+      heroLede: t.heroLede,
+      ctaMail: t.ctaMail,
+      ctaResume: t.ctaResume,
+      resumeHref: t.resumeHref,
+      summaryLabel: t.summaryLabel,
+      summary: t.summary,
+      workTitle: t.workTitle,
+      eduTitle: t.eduTitle,
+      skillsTitle: t.skillsTitle,
+      leadTitle: t.leadTitle,
+      contactLabel: t.contactLabel,
+      contactTitle: t.contactTitle,
+      ventureLabel: t.ventureLabel,
+      basedLabel: t.basedLabel,
+      basedValue: t.basedValue,
+      jobs: t.jobs,
+      education: t.education,
+      skills: t.skills,
+      leadership: t.leadership,
+      stats: t.stats.map(s => ({
+        label: s.label,
+        display: s.prefix + Math.round(s.value * p) + s.suffix
+      })),
+      langX: this.state.lang === 'es' ? '44px' : '0px',
+      ctaDir: this.state.vw < 900 ? 'column' : 'row',
+      ctaAlign: this.state.vw < 900 ? 'stretch' : 'center',
+      setEn: () => this.setLang('en'),
+      setEs: () => this.setLang('es'),
+      showPortrait: this.props.showPortrait ?? true,
+      showPetals: this.props.showPetals ?? true
+    };
+  }
+}
+
+</script>
+</body>
+</html>
