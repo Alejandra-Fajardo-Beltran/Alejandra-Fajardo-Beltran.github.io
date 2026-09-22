@@ -10,4 +10,8 @@ One-page bilingual (ES/EN) resume site.
   same Cormorant Garamond mark used in the nav. Small sizes use a proportionally larger
   monogram so it stays legible at 16px.
 
+- `og-card.jpg` — 1200x630 link-preview card, referenced by the Open Graph and
+  Twitter meta tags in `index.html`. If the name, role line or portrait changes,
+  regenerate this too or shared links will show stale details.
+
 Served by GitHub Pages from `main`.
