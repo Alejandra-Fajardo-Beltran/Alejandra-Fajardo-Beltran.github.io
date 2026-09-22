@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+body{margin:0}
+a{color:#96595C;text-decoration:none}
+a:hover{color:#6E3C40}
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page size="letter">
+<section class="page" style="--accent:{{ accent }};--accent-soft:{{ accentSoft }};box-sizing:border-box;display:flex;flex-direction:column;background:#FFFDFC;font-family:'Source Sans 3',system-ui,sans-serif;color:#2B2320">
+
+<header style="background:#F7EFEC;padding:0.34in 0.62in 0.28in;display:flex;align-items:center;gap:0.32in">
+<sc-if value="{{ showPhoto }}" hint-placeholder-val="{{ true }}">
+<div style="flex:0 0 auto;width:1.18in;height:1.18in;border-radius:50%;padding:5px;background:#FFFDFC;box-shadow:0 1px 0 rgba(150,89,92,0.25)">
+<image-slot id="afb-portrait-en" shape="circle" src="./portrait-square.jpg" style="width:100%;height:100%" placeholder="Portrait"></image-slot>
+</div>
+</sc-if>
+<div style="flex:1 1 auto;min-width:0">
+<h1 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:37px;line-height:1.02;letter-spacing:0.004em;color:#2B2320">Alejandra Fajardo Beltrán</h1>
+<p style="margin:9px 0 0;font-size:12.5px;font-weight:400;letter-spacing:0.055em;text-transform:uppercase;color:#6E615C">Operations · Sales · Business Automation</p>
+<div style="margin-top:13px;padding-top:11px;border-top:1px solid #E6D6D1;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:#5B504B">
+<span>Bogotá, Colombia / Vancouver, Canada</span>
+<span style="color:#CDB8B3">|</span>
+<span>alejandrafajardobeltran@hotmail.com</span>
+<span style="color:#CDB8B3">|</span>
+<span>linkedin.com/in/alefb</span>
+</div>
+</div>
+</header>
+
+<div style="flex:1 1 auto;padding:0.18in 0.62in 0.18in;display:flex;flex-direction:column;gap:10px">
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Professional<br><span style="font-weight:400;color:#6E615C">Summary</span></h2>
+<p style="margin:0;font-size:12px;line-height:1.4;color:#3D3430;text-wrap:pretty">Business Administrator and entrepreneur with 9 years of experience founding, managing and optimizing business operations in Colombia and Canada. Founder of Katty &amp; Co. ($30K ARR), where I designed the complete digital architecture: a proprietary website (kattyco.ca), a Notion CRM and AI automations across the client lifecycle. Experience coordinating logistics and teams of up to 10 people at high-pressure events. Recognized for academic excellence (Dean's List) and selected institutionally, among hundreds of applicants, for the International Program in Ghana. Trilingual (Spanish, English and French) with strong work capacity, discipline and a focus on results.</p>
+</section>
+
+<div style="height:1px;background:#EADCD8"></div>
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Experience</h2>
+<div style="display:flex;flex-direction:column;gap:9px">
+
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:18.5px;font-weight:600;color:#2B2320">Founder &amp; Operator</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2023 — Present</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Katty &amp; Co. · Vancouver, BC</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px">
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Grew a pet care business to $30K CAD in annual revenue with no outside capital, running it profitably while completing a full-time Bachelor of Business Administration.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Designed and built the company's CRM in Notion, consolidating client records, bookings and service history into a single system that replaced manual scheduling and follow-up.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Automated the entire client lifecycle using Notion, GPT and Gmail: booking-triggered welcome emails, AI-personalized daily pet reports with photos, and post-service feedback requests, cutting recurring admin work to near zero.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Generate 15+ bookings per month through a combination of new client acquisition and a recurring client base, won through printed card distribution and referrals.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Built a 5-star profile on the Rover marketplace alongside a direct client base, diversifying acquisition so the business does not depend on a single channel.</li>
+</ul>
+</article>
+
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:18.5px;font-weight:600;color:#2B2320">Independent Contractor &amp; Staffing Coordinator</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2022 — Present</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Vancouver, BC</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px">
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Coordinate logistics, schedules and operational requirements directly with clients on independent contracts.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Recruit, screen and deploy staffing teams for projects and events, scaling headcount to client demand.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Negotiate rates in English, manage project budgets and resolve on-site contingencies to hold service standards in real time.</li>
+</ul>
+</article>
+
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:18.5px;font-weight:600;color:#2B2320">Customer Service Manager &amp; Operations Lead</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">May — Dec 2021</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Mezcaleros Tapas &amp; Cocktails · Montreal, QC</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px">
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Promoted from bartender to operations lead in a high-volume hospitality environment.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Designed and implemented a section-based role distribution system that balanced workload and equalized tip allocation across the team.</li>
+<li style="position:relative;padding-left:14px;font-size:11.6px;line-height:1.36;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Improved customer service response times and team cohesion during peak service volume.</li>
+</ul>
+</article>
+
+</div>
+</section>
+</div>
+
+<footer style="flex:0 0 auto;padding:0 0.62in 0.34in;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:#7A6C67">
+<span>Alejandra Fajardo Beltrán</span>
+<span>Page 1 of 2</span>
+</footer>
+</section>
+
+<section class="page" style="--accent:{{ accent }};--accent-soft:{{ accentSoft }};box-sizing:border-box;display:flex;flex-direction:column;background:#FFFDFC;font-family:'Source Sans 3',system-ui,sans-serif;color:#2B2320">
+
+<header style="padding:0.5in 0.62in 0;display:flex;justify-content:space-between;align-items:center;gap:20px">
+<div style="display:flex;align-items:center;gap:12px">
+<sc-if value="{{ showMonogram }}" hint-placeholder-val="{{ true }}">
+<div style="width:34px;height:34px;border-radius:50%;background:#F7EFEC;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;font-weight:600;letter-spacing:0.06em;color:var(--accent,#96595C)">AFB</div>
+</sc-if>
+<span style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#6E615C">Alejandra Fajardo Beltrán</span>
+</div>
+<span style="font-size:11px;letter-spacing:0.07em;color:#7A6C67">Bogotá, Colombia</span>
+</header>
+
+<div style="flex:1 1 auto;padding:0.28in 0.62in 0.3in;display:flex;flex-direction:column;gap:19px">
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Experience<br><span style="font-weight:400;color:#6E615C">(cont.)</span></h2>
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:19.5px;font-weight:600;color:#2B2320">Founder</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2018 — 2019</span>
+</div>
+<p style="margin:2px 0 7px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Magic Bra (E-commerce) · Bogotá, Colombia</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px">
+<li style="position:relative;padding-left:14px;font-size:12.3px;line-height:1.42;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Ran a lingerie e-commerce brand, importing product from China to Bogotá, to self-fund my university studies.</li>
+<li style="position:relative;padding-left:14px;font-size:12.3px;line-height:1.42;color:#3D3430;text-wrap:pretty" style-before="content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent-soft,#C9A7A4)">Sourced and imported products from international suppliers, managing landed costs, inventory and margins while driving sales through social media, direct prospecting and referrals.</li>
+</ul>
+</article>
+</section>
+
+<div style="height:1px;background:#EADCD8"></div>
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Education</h2>
+<div style="display:flex;flex-direction:column;gap:13px">
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:19.5px;font-weight:600;color:#2B2320">Bachelor of Business Administration (BBA)</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2022 — 2025</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Capilano University · Vancouver, BC</p>
+<p style="margin:0;font-size:12.3px;line-height:1.42;color:#3D3430;text-wrap:pretty">GPA 3.50 / 4.0. Concentrations in Strategic Marketing, Corporate Finance, Accounting and International Business. Dean's List in multiple semesters.</p>
+</article>
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:19.5px;font-weight:600;color:#2B2320">Diploma in Medical Aesthetics</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2026 — Present</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Blanche Macdonald Centre · Vancouver, BC</p>
+<p style="margin:0;font-size:12.3px;line-height:1.42;color:#3D3430;text-wrap:pretty">680-hour program in cosmetic chemistry, cell biology and clinical protocols.</p>
+</article>
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:19.5px;font-weight:600;color:#2B2320">DVS &amp; ASP, Legal and Administrative Secretarial Studies</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2019 — 2020</span>
+</div>
+<p style="margin:2px 0 5px;font-size:12px;font-style:italic;color:var(--accent,#96595C)">Collège Supérieur de Montréal · Montreal, QC</p>
+<p style="margin:0;font-size:12.3px;line-height:1.42;color:#3D3430;text-wrap:pretty">1,485 hours completed entirely in French. Legal drafting, corporate records management, office procedures.</p>
+</article>
+</div>
+</section>
+
+<div style="height:1px;background:#EADCD8"></div>
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Skills</h2>
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="display:grid;grid-template-columns:1.45in 1fr;gap:0.16in;align-items:baseline">
+<span style="font-size:11.5px;font-weight:600;letter-spacing:0.05em;color:#2B2320">Business &amp; Operations</span>
+<span style="font-size:12.3px;line-height:1.45;color:#3D3430;text-wrap:pretty">Client acquisition, B2B and B2C direct sales, contract negotiation, budget management, process design, recruiting and staffing coordination, business analysis.</span>
+</div>
+<div style="display:grid;grid-template-columns:1.45in 1fr;gap:0.16in;align-items:baseline">
+<span style="font-size:11.5px;font-weight:600;letter-spacing:0.05em;color:#2B2320">Systems &amp; Automation</span>
+<span style="font-size:12.3px;line-height:1.45;color:#3D3430;text-wrap:pretty">Notion (database and CRM design), workflow automation, generative AI (ChatGPT, Claude, Gemini), AI-assisted reporting and content, MS Office (Excel), POS systems.</span>
+</div>
+<div style="display:grid;grid-template-columns:1.45in 1fr;gap:0.16in;align-items:baseline">
+<span style="font-size:11.5px;font-weight:600;letter-spacing:0.05em;color:#2B2320">Languages</span>
+<span style="font-size:12.3px;line-height:1.45;color:#3D3430;text-wrap:pretty">Spanish (native), English (C1/C2, IELTS and EF SET certified), French (B2, professional working proficiency).</span>
+</div>
+</div>
+</section>
+
+<div style="height:1px;background:#EADCD8"></div>
+
+<section style="display:grid;grid-template-columns:1.32in 1fr;gap:0.26in;align-items:start">
+<h2 style="margin:2px 0 0;font-size:10.5px;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--accent,#96595C)">Leadership<br><span style="font-weight:400;color:#6E615C">&amp; Volunteering</span></h2>
+<div style="display:flex;flex-direction:column;gap:11px">
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0 0 3px;font-size:12.8px;font-weight:600;color:#2B2320">International Exchange Selection · Dzodze, Ghana</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">Dec 2025</span>
+</div>
+<p style="margin:0;font-size:12.3px;line-height:1.45;color:#3D3430;text-wrap:pretty">Awarded a place through a competitive process for a three-week field program. Led local business projects, donation logistics and English instruction.</p>
+</article>
+<article>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+<h3 style="margin:0 0 3px;font-size:12.8px;font-weight:600;color:#2B2320">Foster &amp; Socialization Volunteer · VOKRA, Vancouver</h3>
+<span style="flex:0 0 auto;font-size:11px;letter-spacing:0.07em;color:#6E615C">2024 — 2025</span>
+</div>
+<p style="margin:0;font-size:12.3px;line-height:1.45;color:#3D3430;text-wrap:pretty">Coordinated temporary foster placements, health reporting and socialization tracking for rescued cats.</p>
+</article>
+</div>
+</section>
+
+</div>
+
+<footer style="flex:0 0 auto;padding:0 0.62in 0.34in;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:#7A6C67">
+<span>alejandrafajardobeltran@hotmail.com</span>
+<span>Page 2 of 2</span>
+</footer>
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#96595C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#96595C&quot;,&quot;#8A6A86&quot;,&quot;#7C6A52&quot;,&quot;#5E6E6B&quot;]},&quot;showPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showMonogram&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#96595C';
+    return {
+      accent,
+      accentSoft: `color-mix(in oklab, ${accent} 46%, #FFFDFC)`,
+      showPhoto: this.props.showPhoto ?? true,
+      showMonogram: this.props.showMonogram ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
