@@ -6,4 +6,8 @@ One-page bilingual (ES/EN) resume site.
 - `support.js` — small render runtime the page depends on.
 - `AlejandraFajardoBeltran-Resume-EN.pdf` / `-ES.pdf` — printable resumes linked from the "Printable resume" / "Hoja de vida" buttons.
 
+- `favicon.*` / `apple-touch-icon.png` / `icon-*.png` — AFB monogram icons, rendered from the
+  same Cormorant Garamond mark used in the nav. Small sizes use a proportionally larger
+  monogram so it stays legible at 16px.
+
 Served by GitHub Pages from `main`.
